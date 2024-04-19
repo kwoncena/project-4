@@ -1,44 +1,49 @@
-// Function to fetch weather data from JSON file and display divination message
-function getWeatherMessage() {
-  const weatherInput = document.getElementById('weatherInput').value;
-  fetch('weather_data.json')
-    .then(response => response.json())
-    .then(data => {
-      const conditions = data.conditions;
-      const message = generateDivinationMessage(conditions, weatherInput);
-      displayMessage(message);
-    })
-    .catch(error => {
-      console.error('Error fetching weather data:', error);
-      displayMessage('Error: Could not retrieve weather data. Please try again.');
-    });
-}
-
-// Function to generate divination message based on weather input
-function generateDivinationMessage(conditions, weatherInput) {
-  const normalizedInput = weatherInput.trim().toLowerCase();
-  const matchingConditions = conditions.filter(condition => condition.toLowerCase().includes(normalizedInput));
-  if (matchingConditions.length > 0) {
-    return `The weather condition "${normalizedInput}" suggests ${getRandomMessage()}`;
-  } else {
-    return 'No matching weather condition found. Please try a different input.';
+// Function to fetch weather conditions from JSON file
+async function fetchWeatherConditions() {
+  try {
+    const response = await fetch('weather_conditions.json');
+    const data = await response.json();
+    return data.conditions;
+  } catch (error) {
+    console.error('Error fetching weather conditions:', error);
+    return [];
   }
 }
 
-// Function to generate a random divination message
-function getRandomMessage() {
-  const messages = [
-    'a time of reflection and introspection.',
-    'an opportunity for growth and change.',
-    'a period of transformation and renewal.',
-    'a sign of unexpected blessings and opportunities.',
-    'a reminder to embrace uncertainty and adaptability.'
-  ];
-  return messages[Math.floor(Math.random() * messages.length)];
+// Function to display weather conditions
+async function displayWeatherConditions() {
+  const conditionList = document.getElementById("conditionList");
+
+  // Clear existing list items
+  conditionList.innerHTML = "";
+
+  // Fetch weather conditions from JSON file
+  const weatherConditions = await fetchWeatherConditions();
+
+  // Loop through weather conditions and create list items
+  weatherConditions.forEach(condition => {
+    const listItem = document.createElement("li");
+    listItem.textContent = condition;
+    conditionList.appendChild(listItem);
+  });
 }
 
-// Function to display divination message on the page
-function displayMessage(message) {
-  const messageContainer = document.getElementById('messageContainer');
-  messageContainer.textContent = message;
+// Function to fetch divination message based on weather condition
+async function getWeatherMessage() {
+  const weatherInput = document.getElementById("weatherInput").value;
+  const messageContainer = document.getElementById("messageContainer");
+
+  // Fetch divination message based on weather condition
+  try {
+    const response = await fetch('divination_messages.json');
+    const data = await response.json();
+    const message = data[weatherInput] || "No divination message available for this weather condition.";
+    messageContainer.textContent = message;
+  } catch (error) {
+    console.error('Error fetching divination messages:', error);
+    messageContainer.textContent = "Failed to fetch divination message.";
+  }
 }
+
+// Call the function to display weather conditions when the page loads
+window.onload = displayWeatherConditions;

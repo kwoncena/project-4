@@ -1,41 +1,64 @@
 body {
     font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #333;
+    color: #fff;
     text-align: center;
+    padding: 20px 0;
   }
   
-  h1 {
-    margin-bottom: 20px;
+  main {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
   }
   
-  input[type="text"] {
-    padding: 10px;
-    margin-right: 10px;
+  section {
+    flex: 1;
+    margin: 0 10px;
   }
   
-  button {
-    padding: 10px 20px;
-    cursor: pointer;
-  }
-  
-  #messageContainer {
-    margin-top: 20px;
-    font-size: 1.2em;
-  }
-  
-  #weatherConditions {
-    margin-top: 50px;
-  }
-  
-  #weatherConditions h2 {
+  h2 {
     margin-bottom: 10px;
   }
   
-  #conditionList {
-    list-style: none;
+  ul {
+    list-style-type: none;
     padding: 0;
   }
   
-  #conditionList li {
+  li {
     margin-bottom: 5px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"] {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  #messageContainer {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
   }
   

@@ -1,23 +1,294 @@
+<!-- HTML (index.html) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Weather Divination</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Weather Divination</h1>
-  <p>Enter a weather condition to receive a divination message:</p>
-  <input type="text" id="weatherInput" placeholder="Enter weather condition">
-  <button onclick="getWeatherMessage()">Get Message</button>
-  <div id="messageContainer"></div>
+  <header>
+    <h1>Weather Divination</h1>
+  </header>
   
-  <!-- Display Weather Conditions -->
-  <div id="weatherConditions">
-    <h2>Weather Conditions</h2>
-    <ul id="conditionList"></ul>
-  </div>
+  <main>
+    <section>
+      <h2>Weather Conditions</h2>
+      <ul id="conditionList">
+        <li>Mostly Cloudy</li>
+        <li>Mostly Cloudy with Haze</li>
+        <li>Mostly Cloudy and Breezy</li>
+        <li>Fair</li>
+        <li>Clear</li>
+        <li>Fair with Haze</li>
+        <li>Clear with Haze</li>
+        <li>Fair and Breezy</li>
+        <li>Clear and Breezy</li>
+        <li>A Few Clouds</li>
+        <li>A Few Clouds with Haze</li>
+        <li>A Few Clouds and Breezy</li>
+        <li>Partly Cloudy</li>
+        <li>Partly Cloudy with Haze</li>
+        <li>Partly Cloudy and Breezy</li>
+        <li>Overcast</li>
+        <li>Overcast with Haze</li>
+        <li>Overcast and Breezy</li>
+        <li>Fog/Mist</li>
+        <li>Fog</li>
+        <li>Freezing Fog</li>
+        <li>Shallow Fog</li>
+        <li>Partial Fog</li>
+        <li>Patches of Fog</li>
+        <li>Fog in Vicinity</li>
+        <li>Freezing Fog in Vicinity</li>
+        <li>Shallow Fog in Vicinity</li>
+        <li>Partial Fog in Vicinity</li>
+        <li>Patches of Fog in Vicinity</li>
+        <li>Light Freezing Fog</li>
+        <li>Heavy Freezing Fog</li>
+        <li>Smoke</li>
+        <li>Freezing Rain</li>
+        <li>Freezing Drizzle</li>
+        <li>Light Freezing Rain</li>
+        <li>Light Freezing Drizzle</li>
+        <li>Heavy Freezing Rain</li>
+        <li>Heavy Freezing Drizzle</li>
+        <li>Freezing Rain in Vicinity</li>
+        <li>Freezing Drizzle in Vicinity</li>
+        <li>Ice Pellets</li>
+        <li>Light Ice Pellets</li>
+        <li>Heavy Ice Pellets</li>
+        <li>Ice Pellets in Vicinity</li>
+        <li>Showers Ice Pellets</li>
+        <li>Thunderstorm Ice Pellets</li>
+        <li>Ice Crystals</li>
+        <li>Hail</li>
+        <li>Small Hail/Snow Pellets</li>
+        <li>Light Small Hail/Snow Pellets</li>
+        <li>Heavy small Hail/Snow Pellets</li>
+        <li>Showers Hail</li>
+        <li>Hail Showers</li>
+        <li>Freezing Rain Snow</li>
+        <li>Light Freezing Rain Snow</li>
+        <li>Heavy Freezing Rain Snow</li>
+        <li>Freezing Drizzle Snow</li>
+        <li>Light Freezing Drizzle Snow</li>
+        <li>Heavy Freezing Drizzle Snow</li>
+        <li>Snow Freezing Rain</li>
+        <li>Light Snow Freezing Rain</li>
+        <li>Heavy Snow Freezing Rain</li>
+        <li>Snow Freezing Drizzle</li>
+        <li>Light Snow Freezing Drizzle</li>
+        <li>Heavy Snow Freezing Drizzle</li>
+        <li>Rain Ice Pellets</li>
+        <li>Light Rain Ice Pellets</li>
+        <li>Heavy Rain Ice Pellets</li>
+        <li>Drizzle Ice Pellets</li>
+        <li>Light Drizzle Ice Pellets</li>
+        <li>Heavy Drizzle Ice Pellets</li>
+        <li>Ice Pellets Rain</li>
+        <li>Light Ice Pellets Rain</li>
+        <li>Heavy Ice Pellets Rain</li>
+        <li>Ice Pellets Drizzle</li>
+        <li>Light Ice Pellets Drizzle</li>
+        <li>Heavy Ice Pellets Drizzle</li>
+        <li>Rain Snow</li>
+        <li>Light Rain Snow</li>
+        <li>Heavy Rain Snow</li>
+        <li>Snow Rain</li>
+        <li>Light Snow Rain</li>
+        <li>Heavy Snow Rain</li>
+        <li>Drizzle Snow</li>
+        <li>Light Drizzle Snow</li>
+        <li>Snow Drizzle</li>
+        <li>Light Snow Drizzle</li>
+        <li>Heavy Drizzle Snow</li>
+        <li>Rain Showers</li>
+        <li>Light Rain Showers</li>
+        <li>Light Rain and Breezy</li>
+        <li>Heavy Rain Showers</li>
+        <li>Rain Showers in Vicinity</li>
+        <li>Light Showers Rain</li>
+        <li>Heavy Showers Rain</li>
+        <li>Showers Rain</li>
+        <li>Showers Rain in Vicinity</li>
+        <li>Rain Showers Fog/Mist</li>
+        <li>Light Rain Showers Fog/Mist</li>
+        <li>Heavy Rain Showers Fog/Mist</li>
+        <li>Rain Showers in Vicinity Fog/Mist</li>
+        <li>Light Showers Rain Fog/Mist</li>
+        <li>Heavy Showers Rain Fog/Mist</li>
+        <li>Showers Rain Fog/Mist</li>
+        <li>Showers Rain in Vicinity Fog/Mist</li>
+        <li>Thunderstorm</li>
+        <li>Thunderstorm Rain</li>
+        <li>Light Thunderstorm Rain</li>
+        <li>Heavy Thunderstorm Rain</li>
+        <li>Light Thunderstorm Rain Haze</li>
+        <li>Heavy Thunderstorm Rain Haze</li>
+        <li>Thunderstorm Fog</li>
+        <li>Light Thunderstorm Rain Fog</li>
+        <li>Heavy Thunderstorm Rain Fog</li>
+        <li>Thunderstorm Light Rain</li>
+        <li>Thunderstorm Heavy Rain</li>
+        <li>Thunderstorm Rain Fog/Mist</li>
+        <li>Thunderstorm Light Rain Fog/Mist</li>
+        <li>Thunderstorm Heavy Rain Fog/Mist</li>
+        <li>Thunderstorm Showers in Vicinity</li>
+        <li>Thunderstorm in Vicinity Haze</li>
+        <li>Thunderstorm Haze in Vicinity</li>
+        <li>Thunderstorm Light Rain Haze</li>
+        <li>Thunderstorm Heavy Rain Haze</li>
+        <li>Thunderstorm Light Rain Fog</li>
+        <li>Thunderstorm Heavy Rain Fog</li>
+        <li>Thunderstorm Hail</li>
+        <li>Light Thunderstorm Rain Hail</li>
+        <li>Heavy Thunderstorm Rain Hail</li>
+        <li>Light Thunderstorm Rain Hail Fog/Mist</li>
+        <li>Heavy Thunderstorm Rain Hail Fog/Hail</li>
+        <li>Thunderstorm Showers in Vicinity Hail</li>
+        <li>Light Thunderstorm Rain Hail Haze</li>
+        <li>Heavy Thunderstorm Rain Hail Haze</li>
+        <li>Thunderstorm Hail Fog</li>
+        <li>Light Thunderstorm Rain Hail Fog</li>
+        <li>Heavy Thunderstorm Rain Hail Fog</li>
+        <li>Thunderstorm Light Rain Hail</li>
+        <li>Thunderstorm Heavy Rain Hail</li>
+        <li>Thunderstorm Rain Hail Fog/Mist</li>
+        <li>Thunderstorm Light Rain Hail Fog/Mist</li>
+        <li>Thunderstorm Heavy Rain Hail Fog/Mist</li>
+        <li>Thunderstorm in Vicinity Hail</li>
+        <li>Thunderstorm in Vicinity Hail Haze</li>
+        <li>Thunderstorm Haze in Vicinity Hail</li>
+        <li>Thunderstorm Light Rain Hail Haze</li>
+        <li>Thunderstorm Heavy Rain Hail Haze</li>
+        <li>Thunderstorm Light Rain Hail Fog</li>
+        <li>Thunderstorm Heavy Rain Hail Fog</li>
+        <li>Thunderstorm Small Hail/Snow Pellets</li>
+        <li>Thunderstorm Rain Small Hail/Snow Pellets</li>
+        <li>Light Thunderstorm Rain Small Hail/Snow Pellets</li>
+        <li>Heavy Thunderstorm Rain Small Hail/Snow Pellets</li>
+        <li>Snow</li>
+        <li>Light Snow</li>
+        <li>Heavy Snow</li>
+        <li>Snow Showers</li>
+        <li>Light Snow Showers</li>
+        <li>Heavy Snow Showers</li>
+        <li>Showers Snow</li>
+        <li>Light Showers Snow</li>
+        <li>Heavy Showers Snow</li>
+        <li>Snow Fog/Mist</li>
+        <li>Light Snow Fog/Mist</li>
+        <li>Heavy Snow Fog/Mist</li>
+        <li>Snow Showers Fog/Mist</li>
+        <li>Light Snow Showers Fog/Mist</li>
+        <li>Heavy Snow Showers Fog/Mist</li>
+        <li>Showers Snow Fog/Mist</li>
+        <li>Light Showers Snow Fog/Mist</li>
+        <li>Heavy Showers Snow Fog/Mist</li>
+        <li>Snow Fog</li>
+        <li>Light Snow Fog</li>
+        <li>Heavy Snow Fog</li>
+        <li>Snow Showers Fog</li>
+        <li>Light Snow Showers Fog</li>
+        <li>Heavy Snow Showers Fog</li>
+        <li>Showers Snow Fog</li>
+        <li>Light Showers Snow Fog</li>
+        <li>Heavy Showers Snow Fog</li>
+        <li>Showers in Vicinity Snow</li>
+        <li>Snow Showers in Vicinity</li>
+        <li>Snow Showers in Vicinity Fog/Mist</li>
+        <li>Snow Showers in Vicinity Fog</li>
+        <li>Low Drifting Snow</li>
+        <li>Blowing Snow</li>
+        <li>Snow Low Drifting Snow</li>
+        <li>Snow Blowing Snow</li>
+        <li>Light Snow Low Drifting Snow</li>
+        <li>Light Snow Blowing Snow</li>
+        <li>Light Snow Blowing Snow Fog/Mist</li>
+        <li>Heavy Snow Low Drifting Snow</li>
+        <li>Heavy Snow Blowing Snow</li>
+        <li>Thunderstorm Snow</li>
+        <li>Light Thunderstorm Snow</li>
+        <li>Heavy Thunderstorm Snow</li>
+        <li>Snow Grains</li>
+        <li>Light Snow Grains</li>
+        <li>Heavy Snow Grains</li>
+        <li>Heavy Blowing Snow</li>
+        <li>Blowing Snow in Vicinity</li>
+        <li>Windy</li>
+        <li>Breezy</li>
+        <li>Fair and Windy</li>
+        <li>A Few Clouds and Windy</li>
+        <li>Partly Cloudy and Windy</li>
+        <li>Mostly Cloudy and Windy</li>
+        <li>Overcast and Windy</li>
+        <li>Showers in Vicinity</li>
+        <li>Showers in Vicinity Fog/Mist</li>
+        <li>Showers in Vicinity Fog</li>
+        <li>Showers in Vicinity Haze</li>
+        <li>Freezing Rain Rain</li>
+        <li>Light Freezing Rain Rain</li>
+        <li>Heavy Freezing Rain Rain</li>
+        <li>Rain Freezing Rain</li>
+        <li>Light Rain Freezing Rain</li>
+        <li>Heavy Rain Freezing Rain</li>
+        <li>Freezing Drizzle Rain</li>
+        <li>Light Freezing Drizzle Rain</li>
+        <li>Heavy Freezing Drizzle Rain</li>
+        <li>Rain Freezing Drizzle</li>
+        <li>Light Rain Freezing Drizzle</li>
+        <li>Heavy Rain Freezing Drizzle</li>
+        <li>Thunderstorm in Vicinity</li>
+        <li>Thunderstorm in Vicinity Fog</li>
+        <li>Light Rain</li>
+        <li>Drizzle</li>
+        <li>Light Drizzle</li>
+        <li>Heavy Drizzle</li>
+        <li>Light Rain Fog/Mist</li>
+        <li>Drizzle Fog/Mist</li>
+        <li>Light Drizzle Fog/Mist</li>
+        <li>Heavy Drizzle Fog/Mist</li>
+        <li>Light Rain Fog</li>
+        <li>Drizzle Fog</li>
+        <li>Light Drizzle Fog</li>
+        <li>Heavy Drizzle Fog</li>
+        <li>Rain</li>
+        <li>Heavy Rain</li>
+        <li>Rain Fog/Mist</li>
+        <li>Rain Fog</li>
+        <li>Heavy Rain Fog</li>
+        <li>Funnel Cloud</li>
+        <li>Funnel Cloud in Vicinity</li>
+        <li>Tornado/Water Spout</li>
+        <li>Dust</li>
+        <li>Low Drifting Dust</li>
+        <li>Blowing Dust</li>
+        <li>Sand</li>
+        <li>Blowing Sand</li>
+        <li>Low Drifting Sand</li>
+        <li>Dust/Sand Whirls</li>
+        <li>Dust/Sand Whirls in Vicinity</li>
+        <li>Dust Storm</li>
+        <li>Heavy Dust Storm</li>
+        <li>Dust Storm in Vicinity</li>
+        <li>Sand Storm</li>
+        <li>Heavy Sand Storm</li>
+        <li>Sand Storm in Vicinity</li>
+        <li>Haze</li>
+      </ul>
+    </section>
+    
+    <section>
+      <div>
+        <label for="weatherInput">Enter Weather Condition:</label>
+        <input type="text" id="weatherInput" placeholder="Type weather condition">
+        <button onclick="getWeatherMessage()">Get Divination Message</button>
+      </div>
+      <div id="messageContainer"></div>
+    </section>
+  </main>
 
   <script src="script.js"></script>
 </body>
